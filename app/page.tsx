@@ -6,6 +6,7 @@ export default function Home() {
   return (
     <main className="">
       <Grid
+      p={'10px'}
         templateAreas={{
           base: `"nav" "main"`,
           lg: `"nav nav" "aside main"`,
@@ -15,13 +16,9 @@ export default function Home() {
           <NavBar />
         </GridItem>
         <Show above="lg">
-          <GridItem area={'aside'} bg={'blue'}>
-            Aside
-          </GridItem>
+          <GridItem area={'aside'}>Aside</GridItem>
         </Show>
-        <GridItem area={'main'} bg={'gold'}>
-          Main
-        </GridItem>
+        <GridItem area={'main'}>Main</GridItem>
       </Grid>
     </main>
   );
