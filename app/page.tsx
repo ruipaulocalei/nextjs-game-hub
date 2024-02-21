@@ -17,7 +17,7 @@ export default function Home() {
           <NavBar />
         </GridItem>
         <Show above="lg">
-          <GridItem area={'aside'}><GenreList /></GridItem>
+          <GridItem area={'aside'} px={2}><GenreList /></GridItem>
         </Show>
         <GridItem area={'main'}>
           <GameGrid />
