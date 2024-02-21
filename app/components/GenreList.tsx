@@ -1,13 +1,21 @@
 'use client';
-import { Button, HStack, List, ListItem, SkeletonText, Text } from '@chakra-ui/react';
+import {
+  Button,
+  HStack,
+  List,
+  ListItem,
+  SkeletonText,
+  Text,
+} from '@chakra-ui/react';
 import useGenres, { Genre } from '../hooks/useGenres';
 import Image from 'next/image';
 
 interface Props {
-    onSelectGenre: (genre: Genre) => void
+  onSelectGenre: (genre: Genre) => void;
+  selectedGenre: Genre | null;
 }
 
-const GenreList = ({onSelectGenre}: Props) => {
+const GenreList = ({ selectedGenre, onSelectGenre }: Props) => {
   const { data: genres, isLoading, error } = useGenres();
   if (isLoading) return <SkeletonText />;
   return (
@@ -22,8 +30,14 @@ const GenreList = ({onSelectGenre}: Props) => {
               width={32}
               className="rounded-lg"
             />
-            <Button onClick={() => onSelectGenre(genre)}
-            fontSize={'large'} variant='link'>{genre.name}</Button>
+            <Button
+              fontWeight={selectedGenre?.id === genre.id ? 'bold' : 'normal'}
+              onClick={() => onSelectGenre(genre)}
+              fontSize={'large'}
+              variant="link"
+            >
+              {genre.name}
+            </Button>
           </HStack>
         </ListItem>
       ))}
