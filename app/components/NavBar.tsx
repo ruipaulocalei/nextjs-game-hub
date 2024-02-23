@@ -2,11 +2,13 @@
 import { HStack, Text } from '@chakra-ui/react';
 import React from 'react';
 import ColorModeSwitch from './ColorModeSwitch';
+import SearchInput from './SearchInput';
 
 const NavBar = () => {
   return (
-    <HStack justifyContent={'space-between'}>
+    <HStack>
       <Text>Game Hub</Text>
+      <SearchInput />
       <ColorModeSwitch />
     </HStack>
   );
