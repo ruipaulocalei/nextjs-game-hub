@@ -11,11 +11,12 @@ const usePlatforms = () =>
   useQuery({
     queryKey: ['platforms'],
     queryFn: async () => {
-      const res = await apiClient
-            .get<FetchResponse<Platform>>('/platforms/lists/parents');
-        return res.data;
+      const res = await apiClient.get<FetchResponse<Platform>>(
+        '/platforms/lists/parents'
+      );
+      return res.data;
     },
-    staleTime: 24 * 60 * 60 * 1000
+    staleTime: 24 * 60 * 60 * 1000,
   });
 //useData<Platform>('/platforms/lists/parents')
 
