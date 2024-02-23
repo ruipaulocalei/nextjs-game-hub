@@ -28,7 +28,6 @@ const GenreList = ({ selectedGenre, onSelectGenre }: Props) => {
               src={genre.image_background}
               height={120}
               width={32}
-              className="rounded-lg"
             />
             <Button
               fontWeight={selectedGenre?.id === genre.id ? 'bold' : 'normal'}
