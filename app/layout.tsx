@@ -7,7 +7,7 @@ import theme from './theme';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Game Hub',
+  title: 'GameHub',
   description: 'A Movie App',
 };
 
