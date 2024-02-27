@@ -9,6 +9,7 @@ import {
 import React from 'react';
 import { BsChevronDown } from 'react-icons/bs';
 import usePlatforms, { Platform } from '../hooks/usePlatforms';
+import usePlatform from '../hooks/usePlatform';
 
 interface Props {
   onSelectPlatform: (platform: Platform) => void;
@@ -17,7 +18,7 @@ interface Props {
 
 const PlatformSelector = ({ onSelectPlatform, selectedPlatformId }: Props) => {
   const { data, error, isLoading } = usePlatforms();
-  const platform = data?.results.find(p => p.id === selectedPlatformId)
+  const platform = usePlatform(selectedPlatformId)
   if (error) return;
   if (isLoading) <Spinner />;
   return (
