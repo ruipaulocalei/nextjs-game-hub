@@ -4,18 +4,10 @@ import NavBar from './components/NavBar';
 import GameGrid from './components/GameGrid';
 import GenreList from './components/GenreList';
 import { useState } from 'react';
-import { Genre } from './hooks/useGenres';
 import PlatformSelector from './components/PlatformSelector';
-import { Platform } from './hooks/usePlatforms';
 import SortSelector from './components/SortSelector';
 import GameHeading from './components/GameHeading';
-
-export interface GameQuery {
-  genre: Genre | null;
-  platform: Platform | null;
-  sortOrder: string;
-  searchText: string;
-}
+import { GameQuery } from './store';
 
 export default function Home() {
   const [gameQuery, setGameQuery] = useState<GameQuery>({} as GameQuery);
@@ -38,8 +30,8 @@ export default function Home() {
         <Show above="lg">
           <GridItem area={'aside'} px={2}>
             <GenreList
-              selectedGenre={gameQuery.genre}
-              onSelectGenre={(genre) => setGameQuery({ ...gameQuery, genre })}
+              selectedGenreId={gameQuery.genreId}
+              onSelectGenre={(genre) => setGameQuery({ ...gameQuery, genreId:genre.id })}
             />
           </GridItem>
         </Show>
@@ -49,9 +41,9 @@ export default function Home() {
             <Flex mb={3}>
               <Box marginRight={4}>
                 <PlatformSelector
-                  selectedPlatform={gameQuery.platform}
+                  selectedPlatformId={gameQuery.platformId}
                   onSelectPlatform={(platform) =>
-                    setGameQuery({ ...gameQuery, platform })
+                    setGameQuery({ ...gameQuery, platformId: platform.id })
                   }
                 />
               </Box>

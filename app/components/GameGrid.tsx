@@ -1,12 +1,12 @@
 'use client';
 import { Box, Button, SimpleGrid, Spinner, Text } from '@chakra-ui/react';
 import useGames from '../hooks/useGames';
-import { GameQuery } from '../page';
 import GameCard from './GameCard';
 import GameCardContainer from './GameCardContainer';
 import GameCardSkeleton from './GameCardSkeleton';
 import React from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component'
+import { GameQuery } from '../store';
 
 interface Props {
   gameQuery: GameQuery;
