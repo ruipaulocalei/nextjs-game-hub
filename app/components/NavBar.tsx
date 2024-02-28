@@ -4,15 +4,11 @@ import React from 'react';
 import ColorModeSwitch from './ColorModeSwitch';
 import SearchInput from './SearchInput';
 
-interface Props {
-  onSearch: (searchText: string) => void;
-}
-
-const NavBar = ({onSearch}:Props) => {
+const NavBar = () => {
   return (
     <HStack>
       <Text>Games</Text>
-      <SearchInput onSearch={onSearch} />
+      <SearchInput />
       <ColorModeSwitch />
     </HStack>
   );
