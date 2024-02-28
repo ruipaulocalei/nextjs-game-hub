@@ -1,5 +1,5 @@
 import React from 'react';
-import { Platform } from '../hooks/usePlatforms';
+import { Platform } from '../entities/Platform';
 import { HStack, Icon } from '@chakra-ui/react';
 import {
   FaAndroid,
