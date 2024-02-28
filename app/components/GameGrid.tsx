@@ -7,6 +7,7 @@ import GameCardSkeleton from './GameCardSkeleton';
 import React from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import useGameQueryStore from '../store';
+import Link from 'next/link';
 
 const GameGrid = () => {
   const {
@@ -40,7 +41,9 @@ const GameGrid = () => {
             <React.Fragment key={i}>
               {page.results.map((game) => (
                 <GameCardContainer key={game.id}>
-                  <GameCard game={game} />
+                  <Link href={`games/${game.slug}`}>
+                    <GameCard game={game} />
+                  </Link>
                 </GameCardContainer>
               ))}
             </React.Fragment>
