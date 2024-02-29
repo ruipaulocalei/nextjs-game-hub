@@ -1,4 +1,5 @@
 'use client';
+import ExpandableText from '@/app/components/ExpandableText';
 import NavBar from '@/app/components/NavBar';
 import useGame from '@/app/hooks/useGame';
 import { Box, Heading, Spinner, Text } from '@chakra-ui/react';
@@ -15,7 +16,7 @@ const GameDetail = () => {
     <Box p={5}>
       <NavBar />
       <Heading>{game?.name}</Heading>
-      <Text textAlign={'justify'}>{game?.description_raw}</Text>
+      <ExpandableText>{game?.description_raw}</ExpandableText>
     </Box>
   );
 };
