@@ -1,11 +1,12 @@
 'use client';
+import CriticScore from '@/app/components/CriticScore';
+import DefinitionItem from '@/app/components/DefinitionItem';
 import ExpandableText from '@/app/components/ExpandableText';
+import GameAttribute from '@/app/components/GameAttribute';
 import NavBar from '@/app/components/NavBar';
 import useGame from '@/app/hooks/useGame';
-import { Box, Heading, Spinner, Text } from '@chakra-ui/react';
+import { Box, Heading, SimpleGrid, Spinner, Text } from '@chakra-ui/react';
 import { useParams } from 'next/navigation';
-import { useRouter } from 'next/router';
-import React from 'react';
 
 const GameDetail = () => {
   const { slug } = useParams();
@@ -17,6 +18,7 @@ const GameDetail = () => {
       <NavBar />
       <Heading>{game?.name}</Heading>
       <ExpandableText>{game?.description_raw}</ExpandableText>
+      <GameAttribute game={game} />
     </Box>
   );
 };
