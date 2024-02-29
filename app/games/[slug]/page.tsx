@@ -3,6 +3,7 @@ import CriticScore from '@/app/components/CriticScore';
 import DefinitionItem from '@/app/components/DefinitionItem';
 import ExpandableText from '@/app/components/ExpandableText';
 import GameAttribute from '@/app/components/GameAttribute';
+import GameTrailer from '@/app/components/GameTrailer';
 import NavBar from '@/app/components/NavBar';
 import useGame from '@/app/hooks/useGame';
 import { Box, Heading, SimpleGrid, Spinner, Text } from '@chakra-ui/react';
@@ -19,6 +20,7 @@ const GameDetail = () => {
       <Heading>{game?.name}</Heading>
       <ExpandableText>{game?.description_raw}</ExpandableText>
       <GameAttribute game={game} />
+      <GameTrailer gameId={game.id} />
     </Box>
   );
 };
