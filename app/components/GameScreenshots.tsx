@@ -19,8 +19,11 @@ const GameScreenshots = ({ gameId }: Props) => {
           src={p.image}
           alt={p.image}
           height={300}
-          width={500}
+          width={800}
           objectFit='cover'
+          style={{
+            borderRadius: '10px'
+          }}
         />
       ))}
     </SimpleGrid>
